@@ -26,7 +26,7 @@ export default function Signup() {
             // const { data } = await api.post('/user/signup', form);
             // localStorage.setItem('token', data.token);
             // navigate('/dashboard', replace=true);
-            alert('Wohoo! You are registered, please sign in to continue.')
+            alert('Signup API is not connected yet');
         } catch (err) {
             setError(err ? err.message: 'Something went wrong');
         } finally {
@@ -51,6 +51,7 @@ export default function Signup() {
                         {error && <div className=''>{error}</div>}
                         <Button disabled={loading}>{loading ? 'Creating...' : 'Sign Up'}</Button>
                     </div>
+                    <BottomWarning text="Already have an account?" linkText="Login" to="/signin" />
                 </form>
             </div>
         </>

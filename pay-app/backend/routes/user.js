@@ -140,4 +140,55 @@ router.get('/bulk', async (req, res) => {
     })
 })
 
+
+// Get all users and balance (For testing/debugging purposes)
+// router.get('/', async (req, res) => {
+//     const users = await User.find({});
+
+//     // Use Promise.all over users.map so we wait for all async lookups
+//     // otherwise forEach with async callbacks will not be awaited and
+//     // usersWithBalance will be empty when we send the response.
+//     // const usersWithBalance = await Promise.all(users.map(async (user) => {
+//     //     const account = await Account.findOne({ userId: user._id });
+//     //     return {
+//     //         username: user.username,
+//     //         firstName: user.firstName,
+//     //         lastName: user.lastName,
+//     //         balance: account ? account.balance : 0,
+//     //         _id: user._id
+//     //     };
+//     // }));
+
+
+//     // JOIN query ran by mongodb query using $lookup
+//      const usersWithBalance = await User.aggregate([
+//     {
+//       $lookup: {
+//         from: "accounts",          // collection name in MongoDB
+//         localField: "_id",         // field in User
+//         foreignField: "userId",    // field in Account
+//         as: "accountInfo"
+//       }
+//     },
+//     {
+//       $unwind: {
+//         path: "$accountInfo",
+//         preserveNullAndEmptyArrays: true
+//       }
+//     },
+//     {
+//       $project: {
+//         username: 1,
+//         firstName: 1,
+//         lastName: 1,
+//         balance: { $ifNull: ["$accountInfo.balance", 0] }
+//       }
+//     }
+//   ]);
+
+//     return res.status(200).json({
+//         users: usersWithBalance
+//     })
+// });
+
 module.exports = router;

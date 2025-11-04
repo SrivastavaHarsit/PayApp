@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { replace, useNavigate } from 'react-router-dom';
-// import api from '../lib/api';
+import { useNavigate } from 'react-router-dom';
+import api from '../lib/api';
 import Button from '../components/Button';
 import Input from '../components/Input';
 import Heading from '../components/Heading';
@@ -23,10 +23,10 @@ export default function Signup() {
         setLoading(true);
         setError('');
         try {
-            // const { data } = await api.post('/user/signup', form);
-            // localStorage.setItem('token', data.token);
-            // navigate('/dashboard', replace=true);
-            alert('Signup API is not connected yet');
+            const { data } = await api.post('/user/signup', form);
+            localStorage.setItem('payapp_token', data.token);
+            navigate('/dashboard', {replace:true});
+            // alert('Signup API is not connected yet');
         } catch (err) {
             setError(err ? err.message: 'Something went wrong');
         } finally {

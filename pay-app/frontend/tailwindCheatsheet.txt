@@ -1,0 +1,32 @@
+| Class               | Meaning           | What It Does                                                                                                        |
+| ------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------- |
+| **`sticky`**        | CSS position mode | Makes the header “stick” to the top of the screen when you scroll. It’s like `position: sticky;`.                   |
+| **`top-0`**         | Offset            | Keeps the sticky element pinned to the **very top** (`top: 0px`).                                                   |
+| **`z-10`**          | Layer order       | Sets `z-index: 10;`, meaning this element stays **above** others that have lower z-index (useful when overlapping). |
+| **`border-b`**      | Border            | Adds a **bottom border**. This visually separates the header from the rest of the page.                             |
+| **`bg-white/70`**   | Background color  | Sets a **white background** with **70% opacity** (slightly transparent).                                            |
+| **`backdrop-blur`** | Blur effect       | Applies a **blur** to whatever is behind it — gives a frosted glass look when transparency is present.              |
+
+
+
+
+FLEX
+| Property          | What it controls                                  | Example                             |
+| ----------------- | ------------------------------------------------- | ----------------------------------- |
+| `display: flex`   | Turns on flexbox                                  | `class="flex"`                      |
+| `flex-direction`  | Sets row (`x-axis`) or column (`y-axis`) layout   | `flex-row` (default), `flex-col`    |
+| `justify-content` | Controls how items spread **along the main axis** | `justify-between`, `justify-center` |
+| `align-items`     | Controls alignment **on the cross axis**          | `items-center`, `items-start`       |
+| `gap`             | Adds spacing between children                     | `gap-4`                             |
+
+
+| CSS                              | Tailwind class    |
+| -------------------------------- | ----------------- |
+| `display: flex`                  | `flex`            |
+| `flex-direction: row`            | `flex-row`        |
+| `flex-direction: column`         | `flex-col`        |
+| `justify-content: center`        | `justify-center`  |
+| `justify-content: space-between` | `justify-between` |
+| `align-items: center`            | `items-center`    |
+| `align-items: start`             | `items-start`     |
+| `gap: 1rem`                      | `gap-4`           |

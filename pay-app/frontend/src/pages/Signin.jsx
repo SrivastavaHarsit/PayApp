@@ -19,14 +19,17 @@ export default function Sigin() {
     const [error, setError] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
-    const from = new URLSearchParams(location.search).get('from') || '/dashboard';
+    // const from = new URLSearchParams(location.search).get('from') || '/dashboard';
+    const from = location.state?.from?.pathname || '/dashboard';
 
     const handleSubmit = async (e) => {
+        console.log("Submitting form", form);
         e.preventDefault();
         setError('');
         setLoading(true);
         try {
             const { data } = await api.post('/user/signin', form);
+            console.log("Token received: " + data.token);
             localStorage.setItem('payapp_token', data.token);
             navigate(from, { replace: true });
         } catch(err) {

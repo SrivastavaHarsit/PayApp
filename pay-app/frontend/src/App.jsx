@@ -19,7 +19,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Signin />}/>
+          <Route path="/" element={<Navigate to="/signin" replace />}/>
           <Route path="/signup" element={<Signup />} />
           <Route path="/signin" element={<Signin />} />
           {/* Authenticated Routes */}
@@ -28,7 +28,7 @@ function App() {
             <Route path="/send" element={<SendMoney />} />
           </Route>
           {/* Fallback */}
-          <Route path="*" element={<Signin />}/>
+          <Route path="*" element={<Navigate to="/signin" replace />}/>
         </Routes>
       </BrowserRouter>
     </>

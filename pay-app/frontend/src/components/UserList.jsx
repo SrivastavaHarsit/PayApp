@@ -36,7 +36,7 @@ export default function UserList({ users }) {
                             </div>
                             <Button 
                                 className=""
-                                onClick={() => navigate(`/send?to=${encodeURIComponent(u.username)}&name=${encodeURIComponent(fullName)}`)}
+                                onClick={() => navigate(`/send?to=${encodeURIComponent(user.username)}&name=${encodeURIComponent(fullName)}`)}
                             >
                                 Send Money
                             </Button>

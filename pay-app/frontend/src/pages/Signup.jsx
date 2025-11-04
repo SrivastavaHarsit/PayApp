@@ -38,12 +38,12 @@ export default function Signup() {
 
     return (
         <>
-            <div className=''>
-                <form onSubmit={handleSubmit} className=''>
+            <div className='flex min-h-full items-center justify-center bg-gray-50 px-4 py-10'>
+                <form onSubmit={handleSubmit} className='w-full max-w-md rounded-2xl border bg-white p-6 shadow-md'>
                     <Heading>Sign Up</Heading>
                     <SubHeading>Create your account</SubHeading>
 
-                    <div className=''>
+                    <div className='mt-6 space-y-4'>
                         <Input label="First Name" value={form.firstName} onChange={(e) =>setForm({...form, firstName: e.target.value})}/>
                         <Input label="Last Name" value={form.lastName} onChange={(e) =>setForm({...form, lastName: e.target.value})}/>
                         <Input label="Email" value={form.username} onChange={(e) =>setForm({...form, username: e.target.value})}/>

@@ -41,12 +41,12 @@ export default function Sigin() {
 
     return (
         <>
-            <div className=''>
-                    <form onSubmit={handleSubmit} className=''>
+            <div className="flex min-h-full items-center justify-center bg-gray-50 px-4 py-10">
+                    <form onSubmit={handleSubmit} className='w-full max-w-md rounded-2xl border bg-white p-6 shadow-md'>
                         <Heading>Sign In</Heading>
                         <SubHeading>Enter Your Credentials to access your account</SubHeading>
     
-                        <div className=''>
+                        <div className='mt-6 space-y-4'>
                             <Input label="Email" value={form.username} onChange={(e) =>setForm({...form, username: e.target.value})}/>
                             <Input label="Password" value={form.password} onChange={(e) =>setForm({...form, password: e.target.value})}/>
                             {error && <div className=''>{error}</div>}

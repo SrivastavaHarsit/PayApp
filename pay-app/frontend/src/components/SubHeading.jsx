@@ -1,3 +1,11 @@
-export default function Heading({ children, className = '' }) {
-  return <h1 className={'text-4xl font-extrabold text-center ' + className}>{children}</h1>;
+export default function SubHeading({ children, className = '' }) {
+  return (
+    <p
+      className={
+        'text-center text-gray-600 text-base font-medium mb-6 ' + className
+      }
+    >
+      {children}
+    </p>
+  );
 }

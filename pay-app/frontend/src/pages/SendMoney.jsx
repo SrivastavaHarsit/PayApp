@@ -37,7 +37,7 @@ export default function SendMoney() {
             return;
         }
         try {
-            await api.post('/account/transfer', {toUsername: to, amount: n});
+            await api.post('/account/transfer', {toUsername: to, amount: n}); // Send request to backend
             setStatus({ type: 'success', msg: 'Transfer successful!'});
             setTimeout(() => navigate('/dashboard', { replace: true}), 1500);
         } catch(err) {

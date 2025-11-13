@@ -19,7 +19,7 @@ export async function transfer(fromUserId: string, toUsername: string, amount: n
       err.status = 404;
       throw err;
     }
-    if (from.balance < amount) {
+    if (Number(from.balance )< amount) {
       const err: any = new Error('Insufficient balance');
       err.status = 400;
       throw err;
@@ -41,11 +41,11 @@ export async function transfer(fromUserId: string, toUsername: string, amount: n
     // Deduct and Credit atomically
     await tx.account.update({
       where: { userId: fromUserId },
-      data: { balance: (from.balance - amount) }
+      data: { balance: (Number(from.balance) - amount) }
     });
     await tx.account.update({
       where: { userId: toUser.id },
-      data: { balance: (to.balance + amount) }
+      data: { balance: (Number(to.balance )+ amount) }
     });
 
     return true;

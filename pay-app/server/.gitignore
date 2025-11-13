@@ -1,0 +1,8 @@
+# ignore node modules
+/node_modules
+# optional useful ignores
+/dist
+.env
+.DS_Store
+.vscode
+/src/generated/prisma
